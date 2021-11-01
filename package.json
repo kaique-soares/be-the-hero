@@ -1,0 +1,10 @@
+{
+  "name": "be-the-hero",
+  "version": "0.1.0",
+  "repository": "https://github.com/kaique-soares/be-the-hero.git",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/server"
+  ]
+}

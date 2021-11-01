@@ -1,7 +1,6 @@
-node_modules/
-
-tmp/
+tmp/*
+!tmp/.gitkeep
 
 .env
 
-src/database/*.sqlite
+*.sqlite
