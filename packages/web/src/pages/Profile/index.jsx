@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { FiPower, FiTrash2 } from 'react-icons/fi';
+import { useEffect, useState } from 'react'
+import { Link, useHistory } from 'react-router-dom'
+import { FiPower, FiTrash2 } from 'react-icons/fi'
 
-import api from '../../services/api';
+import api from '../../services/api'
 
-import './styles.css';
+import './styles.css'
 
-import logoImg from '../../assets/logo.svg';
+import logoImg from '../../assets/logo.svg'
 
-export default function Profile() {
-  const [incidents, setIncidents] = useState([]);
+export function Profile() {
+  const [incidents, setIncidents] = useState([])
 
-  const history = useHistory();
+  const history = useHistory()
 
-  const ongId = localStorage.getItem('ongId');
-  const ongName = localStorage.getItem('ongName');
+  const ongId = localStorage.getItem('ongId')
+  const ongName = localStorage.getItem('ongName')
 
   useEffect(() => {
     api.get('/profile', {
@@ -22,9 +22,9 @@ export default function Profile() {
         Authorization: ongId,
       }
     }).then(response => {
-      setIncidents(response.data);
+      setIncidents(response.data)
     })
-  }, [ongId]);
+  }, [ongId])
 
   async function handleDeleteIncident(id) {
     try {
@@ -32,18 +32,18 @@ export default function Profile() {
         headers: {
           Authorization: ongId,
         }
-      });
+      })
 
-      setIncidents(incidents.filter(incident => incident.id !== id));
+      setIncidents(incidents.filter(incident => incident.id !== id))
     } catch (err) {
-      alert('Erro ao deletar caso, tente novamente.');
+      alert('Erro ao deletar caso, tente novamente.')
     }
   }
 
   function handleLogout() {
-    localStorage.clear();
+    localStorage.clear()
 
-    history.push('/');
+    history.push('/')
   }
 
   return (
@@ -86,5 +86,5 @@ export default function Profile() {
         ))}
       </ul>
     </div>
-  );
+  )
 }

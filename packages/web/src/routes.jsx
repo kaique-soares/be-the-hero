@@ -1,12 +1,11 @@
-import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import Logon from './pages/Logon';
-import Register from './pages/Register';
-import Profile from './pages/Profile';
-import NewIncident from './pages/NewIncident';
+import { Logon } from './pages/Logon'
+import { Register } from './pages/Register'
+import { Profile } from './pages/Profile'
+import { NewIncident } from './pages/NewIncident'
 
-export default function src() {
+export function Routes() {
   return (
     <BrowserRouter>
       <Switch>
@@ -17,5 +16,5 @@ export default function src() {
         <Route path="/incidents/new" component={NewIncident} />
       </Switch>
     </BrowserRouter>
-  );
+  )
 }
