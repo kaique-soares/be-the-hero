@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { FiArrowLeft } from 'react-icons/fi';
+import { useState } from 'react'
+import { Link, useHistory } from 'react-router-dom'
+import { FiArrowLeft } from 'react-icons/fi'
 
-import api from '../../services/api';
+import api from '../../services/api'
 
-import './styles.css';
+import './styles.css'
 
-import logoImg from '../../assets/logo.svg';
+import logoImg from '../../assets/logo.svg'
 
-export default function Register() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [whatsapp, setWhatsapp] = useState('');
-  const [city, setCity] = useState('');
-  const [uf, setUf] = useState('');
+export function Register() {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [whatsapp, setWhatsapp] = useState('')
+  const [city, setCity] = useState('')
+  const [uf, setUf] = useState('')
 
-  const history = useHistory();
+  const history = useHistory()
 
   async function handleRegister(event) {
-    event.preventDefault();
+    event.preventDefault()
 
     const data = {
       name,
@@ -26,16 +26,16 @@ export default function Register() {
       whatsapp,
       city,
       uf
-    };
+    }
 
     try {
-      const response = await api.post('/ongs', data);
+      const response = await api.post('/ongs', data)
 
-      alert(`Seu ID de acesso: ${response.data.id}`);
+      alert(`Seu ID de acesso: ${response.data.id}`)
 
-      history.push('/');
+      history.push('/')
     } catch (err) {
-      alert('Erro no cadastro, tente novamente.');
+      alert('Erro no cadastro, tente novamente.')
     }
   }
 
@@ -95,5 +95,5 @@ export default function Register() {
         </form>
       </div>
     </div>
-  );
+  )
 }
