@@ -9,7 +9,7 @@
 <br />
 
 ```bash
-- Todo o projeto foi desenvolvido utilizando TypeScript
+- Todo o projeto foi desenvolvido utilizando JavaScript
 ```
 
 ```bash
