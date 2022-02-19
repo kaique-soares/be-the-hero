@@ -6,6 +6,6 @@
   "repository": "https://github.com/kaique-soares/be-the-hero.git",
   "workspaces": [
     "server",
-    "packages/web"
+    "web"
   ]
 }
